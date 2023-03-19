@@ -1,0 +1,13 @@
+.cards {
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &-input {
+    margin: 20px 0;
+  }
+}
