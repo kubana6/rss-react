@@ -5,8 +5,7 @@ import App from "./App";
 import { AboutUs } from "./pages/AboutUs/AboutUs";
 import { ErrorPage } from "./pages/ErrorPage/ErrorPage";
 import { Cards } from "./pages/Cards/Cards";
-
-import "./index.css";
+import "./index.scss";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +26,5 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <RouterProvider router={router} />
 );
