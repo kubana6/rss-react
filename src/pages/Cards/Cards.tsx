@@ -1,7 +1,7 @@
 import { posts, storageKeys } from "../../constants";
 import { getStorageByKey, setStorageByKey } from "../../helpers/storage";
 import React, { Component } from "react";
-import { Input } from "../../components/Input/Input";
+import { Input } from "../../components/FormElements/Input/Input";
 import { Card } from "../../components/Card/Card";
 import "./Cards.scss";
 

@@ -1,20 +1,31 @@
 import React, { PureComponent } from "react";
 import { InputProps } from "./type";
+import "./Input.scss";
 
 export class Input extends PureComponent<InputProps> {
   onHandleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    this.props.onChange(e.target.value);
+    const { onChange } = this.props;
+    if (onChange) {
+      onChange(e.target.value);
+    }
   };
 
   render(): React.ReactNode {
-    const { value, className, errors } = this.props;
+    const { value, className, errors, refObject, id, labelName, classNameWrapper } = this.props;
 
     return (
-      <>
+      <fieldset className={classNameWrapper}>
+        {labelName && (
+          <label className="label" htmlFor={id}>
+            {labelName}
+          </label>
+        )}
         <input
-          value={value}
+          id={id}
+          {...(value ? { value } : {})}
           className={`input ${className || ""}`}
           onChange={this.onHandleChange}
+          ref={refObject}
         />
         {errors &&
           errors.map((error) => (
@@ -22,7 +33,7 @@ export class Input extends PureComponent<InputProps> {
               {error}
             </span>
           ))}
-      </>
+      </fieldset>
     );
   }
 }

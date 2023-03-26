@@ -5,6 +5,8 @@ import App from "./App";
 import { AboutUs } from "./pages/AboutUs/AboutUs";
 import { ErrorPage } from "./pages/ErrorPage/ErrorPage";
 import { Cards } from "./pages/Cards/Cards";
+import { Form } from "./pages/Form/Form";
+
 import "./index.scss";
 
 const router = createBrowserRouter([
@@ -20,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "about-us",
         element: <AboutUs />,
+      },
+      {
+        path: "form",
+        element: <Form />,
       },
     ],
   },

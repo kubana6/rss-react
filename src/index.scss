@@ -11,3 +11,18 @@ body {
   height: 100%;
   margin: 0;
 }
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-start;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
