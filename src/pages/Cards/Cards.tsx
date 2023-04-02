@@ -1,42 +1,47 @@
 import { posts, storageKeys } from "../../constants";
 import { getStorageByKey, setStorageByKey } from "../../helpers/storage";
-import React, { Component } from "react";
+import React, { Component, useCallback, useEffect, useRef, useState } from "react";
 import { Input } from "../../components/FormElements/Input/Input";
 import { Card } from "../../components/Card/Card";
 import "./Cards.scss";
 
-export class Cards extends Component {
-  state = {
-    value: "",
-  };
+export const Cards = () => {
+  const [searchValue, setSearchValue] = useState("");
+  const searchValueRef = useRef(searchValue);
 
-  componentDidMount = () => {
+  useEffect(() => {
     const storageValue = getStorageByKey(storageKeys.searchValue);
 
-    this.setState({ value: storageValue });
-  };
+    setSearchValue(storageValue);
+  }, []);
 
-  componentWillUnmount = () => {
-    const { value } = this.state;
-    setStorageByKey(value, storageKeys.searchValue);
-  };
+  useEffect(() => {
+    searchValueRef.current = searchValue;
+  }, [searchValue]);
 
-  onChange = (value: string) => {
-    this.setState({ value });
-  };
+  useEffect(() => {
+    return () => {
+      debugger;
+      setStorageByKey(searchValueRef.current, storageKeys.searchValue);
+    };
+  }, []);
 
-  render(): React.ReactNode {
-    const { value } = this.state;
-    return (
-      <section className="cards">
-        <Input className="cards-input" value={value} onChange={this.onChange} />
+  const onChange = useCallback(
+    (value: string) => {
+      setSearchValue(value);
+    },
+    [setSearchValue]
+  );
 
-        <div className="cards-content">
-          {posts.map(({ id, ...rest }) => (
-            <Card key={id} {...rest} className="cards-content-item" onClick={() => {}} />
-          ))}
-        </div>
-      </section>
-    );
-  }
-}
+  return (
+    <section className="cards">
+      <Input className="cards-input" value={searchValue} onChange={onChange} />
+
+      <div className="cards-content">
+        {posts.map(({ id, ...rest }) => (
+          <Card key={id} {...rest} className="cards-content-item" onClick={() => {}} />
+        ))}
+      </div>
+    </section>
+  );
+};

@@ -14,6 +14,7 @@ export const Input: React.FC<InputProps> = ({
 }) => {
   const onHandleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
+      e.preventDefault();
       if (onChange) {
         onChange(e.target.value);
       }
