@@ -17,9 +17,31 @@
     background-color: #f6f8fa;
 
     .gender {
+      &-inputs {
+        display: flex;
+        width: 100%;
+      }
+    }
+
+    .accept-input {
       display: flex;
-      width: 100%;
-      flex-direction: row;
+      flex-direction: row-reverse;
+      align-items: end;
+      justify-content: start;
+    }
+
+    &-error {
+      color: red;
     }
   }
+
+  &-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
 }

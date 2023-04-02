@@ -3,18 +3,11 @@ import { RadioButtonProps } from "./type";
 
 class RadioButton extends Component<RadioButtonProps> {
   render() {
-    const { labelName, value, checked, onChange, refObject, classNameWrapper, name } = this.props;
+    const { labelName, checked, onChange, refObject, classNameWrapper, name } = this.props;
 
     return (
       <label className={classNameWrapper}>
-        <input
-          name={name}
-          type="radio"
-          value={value}
-          checked={checked}
-          onChange={onChange}
-          ref={refObject}
-        />
+        <input name={name} type="radio" checked={checked} onChange={onChange} ref={refObject} />
         {labelName}
       </label>
     );
