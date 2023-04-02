@@ -1,4 +1,4 @@
-export interface InputProps {
+export interface CheckboxProps {
   onChange?: (value: string) => void;
   errors?: string[] | null;
   className?: string;
