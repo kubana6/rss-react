@@ -1,0 +1,64 @@
+.form-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .form {
+    width: 100%;
+    max-width: 400px;
+    max-height: 700px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f6f8fa;
+
+    .gender {
+      &-inputs {
+        display: flex;
+        width: 100%;
+      }
+    }
+
+    .accept-input {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: end;
+      justify-content: start;
+    }
+
+    &-error {
+      color: red;
+    }
+
+    &-message {
+      position: absolute;
+      top:0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      text-transform: capitalize;
+      color: green;
+      background-color: #f6f8fa;
+    }
+  }
+
+  &-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+}

@@ -1,0 +1,58 @@
+.select {
+  &-error {
+    color: red;
+  }
+
+  &-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  &-container select {
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #555;
+    font-size: 16px;
+    height: 36px;
+    padding: 8px 16px;
+    width: 100%;
+  }
+  
+  &-container select:focus {
+    border-color: #3f51b5;
+    box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+    outline: none;
+  }
+  
+  &-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -3px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #aaa;
+    pointer-events: none;
+  }
+  
+  &-container:hover::before {
+    border-top-color: #666;
+  }
+  
+  &-container select[disabled] {
+    color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  
+}
+
+.label {
+  margin-bottom: 4px;
+}
+
