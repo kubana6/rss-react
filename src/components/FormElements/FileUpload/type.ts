@@ -1,11 +1,13 @@
 export type FileUploadProps = {
   accept: string;
   multiple?: boolean;
-  onChange?: (files: File[]) => void;
   refObject?: React.RefObject<HTMLInputElement>;
   id?: string;
   labelName?: string;
-  errors?: string[] | null;
+  error?: string;
   className?: string;
   classNameWrapper?: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  name: string;
 };

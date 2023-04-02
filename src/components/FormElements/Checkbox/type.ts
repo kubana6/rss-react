@@ -1,10 +1,10 @@
 export interface CheckboxProps {
-  onChange?: (value: string) => void;
-  errors?: string[] | null;
+  error?: string;
   className?: string;
   checked?: boolean;
-  refObject?: React.RefObject<HTMLInputElement>;
   id?: string;
   labelName?: string;
   name?: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
 }

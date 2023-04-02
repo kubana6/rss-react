@@ -8,12 +8,14 @@
     width: 100%;
     max-width: 400px;
     max-height: 700px;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: space-between;
     border-radius: 16px;
     padding: 20px;
+    margin-bottom: 20px;
     background-color: #f6f8fa;
 
     .gender {
@@ -32,6 +34,21 @@
 
     &-error {
       color: red;
+    }
+
+    &-message {
+      position: absolute;
+      top:0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      text-transform: capitalize;
+      color: green;
+      background-color: #f6f8fa;
     }
   }
 

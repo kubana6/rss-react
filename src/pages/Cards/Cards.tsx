@@ -1,6 +1,6 @@
 import { posts, storageKeys } from "../../constants";
 import { getStorageByKey, setStorageByKey } from "../../helpers/storage";
-import React, { Component, useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Input } from "../../components/FormElements/Input/Input";
 import { Card } from "../../components/Card/Card";
 import "./Cards.scss";
@@ -27,15 +27,16 @@ export const Cards = () => {
   }, []);
 
   const onChange = useCallback(
-    (value: string) => {
-      setSearchValue(value);
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      e.preventDefault();
+      setSearchValue(e.target.value);
     },
     [setSearchValue]
   );
 
   return (
     <section className="cards">
-      <Input className="cards-input" value={searchValue} onChange={onChange} />
+      <Input name="cardsInput" className="cards-input" value={searchValue} onChange={onChange} />
 
       <div className="cards-content">
         {posts.map(({ id, ...rest }) => (

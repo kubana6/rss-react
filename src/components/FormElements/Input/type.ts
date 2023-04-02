@@ -1,10 +1,11 @@
 export interface InputProps {
-  onChange?: (value: string) => void;
-  errors?: string[] | null;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  error?: string;
   className?: string;
   classNameWrapper?: string;
   value?: string;
-  refObject?: React.RefObject<HTMLInputElement>;
   id?: string;
   labelName?: string;
+  name: string;
 }

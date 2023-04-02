@@ -1,47 +1,27 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { InputProps } from "./type";
 import "./Input.scss";
 
-export const Input: React.FC<InputProps> = ({
-  value,
-  className,
-  errors,
-  refObject,
-  id,
-  labelName,
-  classNameWrapper,
-  onChange,
-}) => {
-  const onHandleChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      e.preventDefault();
-      if (onChange) {
-        onChange(e.target.value);
-      }
-    },
-    [onChange]
-  );
-
-  return (
-    <fieldset className={classNameWrapper}>
-      {labelName && (
-        <label className="label" htmlFor={id}>
-          {labelName}
-        </label>
-      )}
-      <input
-        id={id}
-        {...(value ? { value } : {})}
-        className={`input ${className || ""}`}
-        onChange={onHandleChange}
-        ref={refObject}
-      />
-      {errors &&
-        errors.map((error) => (
-          <span key={error} className="input-error">
-            {error}
-          </span>
-        ))}
-    </fieldset>
-  );
-};
+export const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ value, className, error, id, labelName, classNameWrapper, onChange, onBlur, name }, ref) => {
+    return (
+      <fieldset className={classNameWrapper}>
+        {labelName && (
+          <label className="label" htmlFor={id}>
+            {labelName}
+          </label>
+        )}
+        <input
+          name={name}
+          id={id}
+          {...(value ? { value } : {})}
+          className={`input ${className || ""}`}
+          onChange={onChange}
+          onBlur={onBlur}
+          ref={ref}
+        />
+        {error && <span className="input-error">{error}</span>}
+      </fieldset>
+    );
+  }
+);

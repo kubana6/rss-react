@@ -1,11 +1,11 @@
-export interface errorsForm {
-  firstName: string[] | [];
-  lastName: string[] | [];
-  birthDay: string[] | [];
-  country: string[] | [];
-  gender: string[] | [];
-  avatar: string[] | [];
-  accept: string[] | [];
+export interface FormFields {
+  firstName: string;
+  lastName: string;
+  birthDay: string;
+  country: string;
+  gender: string;
+  avatar: File[];
+  accept: boolean;
 }
 
 export interface CardsForm {
@@ -16,10 +16,4 @@ export interface CardsForm {
   country: string;
   gender: string;
   avatar: string;
-}
-
-export interface State {
-  cards: CardsForm[] | [];
-  errors: errorsForm;
-  isActiveMessage: boolean;
 }

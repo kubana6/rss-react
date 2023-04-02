@@ -1,13 +1,14 @@
 export interface SelectProps {
   options: Option[];
   value?: string;
-  onChange?: (value: string) => void;
-  refObject?: React.RefObject<HTMLSelectElement>;
   className?: string;
   classNameWrapper?: string;
   id?: string;
   labelName?: string;
-  errors?: string[] | null;
+  error?: string;
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLSelectElement>) => void;
+  name: string;
 }
 export interface Option {
   value: string;
