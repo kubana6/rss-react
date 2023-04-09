@@ -1,9 +1,6 @@
-export interface CardProps {
+import { Card } from "../../api/types";
+
+export interface CardProps extends Card {
   className?: string;
-  onClick: () => void;
-  id?: number;
-  title: string;
-  image: string;
-  views: number;
-  likes: number;
+  onClick: (card: Card) => void;
 }

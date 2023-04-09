@@ -11,10 +11,10 @@ export const UserCard: React.FC<UserCardProps> = ({
   country,
   gender,
 }) => (
-  <button className={`card ${className || ""}`}>
-    <p className="card-title">{`User: ${lastName} ${firstName}`}</p>
-    <img className="card-image" src={avatar} alt={`card post ${lastName}`} />
-    <div className="card-information">
+  <button className={`user-card ${className || ""}`}>
+    <p className="user-card-title">{`User: ${lastName} ${firstName}`}</p>
+    <img className="user-card-image" src={avatar} alt={`user-card post ${lastName}`} />
+    <div className="user-card-information">
       <span>country: {country}</span>
       <span>birthDay: {birthDay}</span>
       <span>gender: {gender}</span>
