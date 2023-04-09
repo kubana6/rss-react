@@ -23,6 +23,11 @@ fieldset {
   justify-content: flex-start;
 }
 
+main {
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
+}
+
 .mt-2 {
   margin-top: 8px;
 }
