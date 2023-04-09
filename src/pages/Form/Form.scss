@@ -1,0 +1,47 @@
+.form-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .form {
+    width: 100%;
+    max-width: 400px;
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    border-radius: 16px;
+    padding: 20px;
+    background-color: #f6f8fa;
+
+    .gender {
+      &-inputs {
+        display: flex;
+        width: 100%;
+      }
+    }
+
+    .accept-input {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: end;
+      justify-content: start;
+    }
+
+    &-error {
+      color: red;
+    }
+  }
+
+  &-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+}
